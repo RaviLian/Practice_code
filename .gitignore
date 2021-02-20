@@ -41,6 +41,5 @@ Thumbs.db
 .vscode/*
 *.lock
 # 忽略rust编译文件
-/target
-**/*.rs.bk
+Rust/*/target
 
