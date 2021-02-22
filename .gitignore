@@ -35,11 +35,13 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-
+__MACOSX
 # 忽略idea
 .idea/*
 .vscode/*
 *.lock
 # 忽略rust编译文件
 Rust/*/target
+# 忽略gif图片
+*.gif
 
