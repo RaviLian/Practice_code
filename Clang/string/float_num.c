@@ -11,6 +11,6 @@ int main() {
     // 注意format格数中两个%是为了输出一个%
     sprintf(cat, "%%.%dlf\n", n);
     // 针对printf的第一个参数进行拼接处理即可
-    printf(cat, num);    
+    printf(cat, num);
     return 0;
 }
