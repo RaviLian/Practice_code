@@ -46,6 +46,30 @@ def checkTableFull(table):
     return flag
 
 
+# 检查是否胜利
+def checkWon(table, symbol):
+    success = (
+        ((0, 0), (0, 1), (0, 2),),
+        ((1, 0), (1, 1), (1, 2),),
+        ((2, 0), (2, 1), (2, 2),),
+
+        ((0, 0), (1, 0), (2, 0)),
+        ((0, 1), (1, 1), (2, 1)),
+        ((0, 2), (1, 2), (2, 2)),
+
+        ((0, 0), (1, 1), (2, 2)),
+        ((2, 0), (1, 1), (0, 2)),
+    )
+    for line in success:
+        x1, y1 = line[0]
+        x2, y2 = line[1]
+        x3, y3 = line[2]
+        if table[x1][y1] == symbol \
+                and table[x2][y2] == symbol \
+                and table[x3][y3] == symbol:
+            return True
+
+
 # 获取输入
 def get_input():
     s = input("请输入您要下的坐标：")
@@ -64,7 +88,15 @@ def main():
         take_a_step(x, y, symbol)
         if checkTableFull(_table):
             print_table(_table)
-            print("棋盘已满，游戏结束！")
+            print("棋盘已满！平局！游戏结束！")
+            break
+        if checkWon(_table, 'X'):
+            print_table(_table)
+            print("X胜！游戏结束！")
+            break
+        if checkWon(_table, 'O'):
+            print_table(_table)
+            print("O胜！游戏结束！")
             break
 
 
