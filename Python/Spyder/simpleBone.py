@@ -7,7 +7,6 @@ class Spyder:
         ptype: fn -> filename string
         """
         self.filename = fn
-    
     def download(self, url):
         """
         ptype: url -> str
@@ -39,4 +38,3 @@ class Spyder:
 b_crawler = Spyder('douban_new.txt')
 content = b_crawler.download('https://www.bilibili.com/v/popular/all')
 print(content)
-
