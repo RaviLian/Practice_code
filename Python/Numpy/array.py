@@ -20,7 +20,7 @@ print(x.size)
 print(x.dtype)
 
 # 2.内置函数创建array
-# 2.1 arange
+# 2.1 arange(start, end, step)
 x = np.arange(2.0, 10.0, 1.5)
 print(x)
 # 2.2 ones 全1
